@@ -1,4 +1,5 @@
-require ( './helpers.js' );
+require('jsdom-global')()
+// Your test code below...
 
 describe("index.html", () => {
   describe("after index.js is processed", () => {
@@ -26,3 +27,14 @@ describe("index.html", () => {
 
   });
 })
+
+const p = document.querySelector('p');
+
+const a = document.createElement('a');
+a.href = 'https://developer.mozilla.org/en-US/docs/Web/HTML';
+a.textContent = 'MDN HTML documentation';
+p.appendChild(a);
+
+const span = document.createElement('span');
+span.textContent = 'Alex is the champion';
+document.body.appendChild(span);
